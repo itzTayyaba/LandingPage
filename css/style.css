@@ -7,6 +7,12 @@ body {
     color: #1a1a1a;
 }
 
+ul {
+    list-style: none; /* Removes default bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -164,6 +170,7 @@ body {
     text-align: center; /* Centers everything */
     margin-bottom: 50px 0; /* Adds space below */
 }
+
 
 .section-title {
     display: flex;
