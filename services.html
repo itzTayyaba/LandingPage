@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Tayyaba Ismail</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<style>document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in-up");
 
-    function handleScroll() {
+    function revealOnScroll() {
         fadeElements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             if (elementTop < window.innerHeight - 50) {
@@ -18,10 +20,10 @@
         });
     }
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run on page load
+    revealOnScroll(); // Run on page load
+    window.addEventListener("scroll", revealOnScroll);
 });
-</style>
+</script>
 <body>
 
     <!-- Navbar -->
