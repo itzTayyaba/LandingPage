@@ -168,7 +168,8 @@ ul {
 
 .portfolio {
     text-align: center; /* Centers everything */
-    margin-bottom: 50px 0; /* Adds space below */
+    margin-bottom: 50px; /* Adds space below */
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 
@@ -192,7 +193,8 @@ ul {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Ensures 4 items per row */    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 items per row */
+    gap: 20px;
     margin-top: 30px;
 }
 
@@ -204,6 +206,7 @@ ul {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .portfolio-item {
@@ -221,23 +224,70 @@ ul {
     height: 180px;
     border-radius: 8px;
     object-fit: cover;
+    transition: transform 0.4s ease-in-out;
 }
 
 .portfolio-card h3 {
     margin-top: 15px;
     font-size: 1.4rem;
     color: #14213d;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .portfolio-card p {
     color: #555;
     font-size: 1rem;
     margin-top: 8px;
+    animation: fadeIn 1.8s ease-in-out;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Portfolio Section Animation when Scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    .portfolio-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .portfolio-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Enhanced Lower Section */

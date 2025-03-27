@@ -6,6 +6,28 @@
     <title>Portfolio - Tayyaba Web Services</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".portfolio-card");
+
+        function showOnScroll() {
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (cardPosition < screenPosition) {
+                    card.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", showOnScroll);
+        showOnScroll(); // Run once on load in case some cards are already in view
+    });
+</script>
+</body>
+</html>
+
 <body>
 
     <!-- Header/Navbar -->
@@ -25,11 +47,11 @@
     <!-- Portfolio Section -->
     <section class="portfolio">
         <div class="container">
-            <h1 class="section-title">My Work</h1>
+            <h1 class="section-title animate-title">My Work</h1>
             <p class="section-subtitle">Here are some of the websites and projects I have designed and developed.</p>
 
             <div class="portfolio-grid">
-                <div class="portfolio-card">
+                <div class="portfolio-card animate-card">
                     <img src="image/ecommerce.jpg" alt="Project 1">
                     <div class="portfolio-info">
                         <h3>E-Commerce Website</h3>
@@ -38,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card">
+                <div class="portfolio-card animate-card">
                     <img src="image/portfolio.png" alt="Project 2">
                     <div class="portfolio-info">
                         <h3>Portfolio Website</h3>
@@ -47,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card">
+                <div class="portfolio-card animate-card">
                     <img src="image/small.jpg" alt="Project 3">
                     <div class="portfolio-info">
                         <h3>Business Website</h3>
@@ -56,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card">
+                <div class="portfolio-card animate-card">
                     <img src="image/blog.png" alt="Project 4">
                     <div class="portfolio-info">
                         <h3>Blog Platform</h3>
