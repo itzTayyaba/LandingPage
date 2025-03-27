@@ -6,6 +6,22 @@
     <title>Our Services - Tayyaba Ismail</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<style>document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in-up");
+
+    function handleScroll() {
+        fadeElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < window.innerHeight - 50) {
+                element.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run on page load
+});
+</style>
 <body>
 
     <!-- Navbar -->
@@ -31,32 +47,32 @@
     <!-- Services Section -->
     <section class="services">
         <div class="service-container">
-            <div class="service-card">
+            <div class="service-card fade-in-up">
                 <img src="image/ux.png" alt="Web Design">
                 <h3>Web Design & Development</h3>
                 <p>Modern, responsive, and interactive websites tailored to your business needs.</p>
             </div>
-
-            <div class="service-card">
+    
+            <div class="service-card fade-in-up">
                 <img src="image/seo.webp" alt="SEO Optimization">
                 <h3>SEO Optimization</h3>
                 <p>Improve search engine rankings and boost organic traffic with expert SEO strategies.</p>
             </div>
-
-            <div class="service-card">
+    
+            <div class="service-card fade-in-up">
                 <img src="image/web.png" alt="Social Media Marketing">
                 <h3>Social Media Marketing</h3>
                 <p>Strategic campaigns on Facebook, Instagram, LinkedIn, and TikTok to grow your brand.</p>
             </div>
-
-            <div class="service-card">
+    
+            <div class="service-card fade-in-up">
                 <img src="image/ecommerce.jpg" alt="E-commerce Solutions">
                 <h3>E-commerce Website Development</h3>
                 <p>Creating professional online stores that enhance user experience and increase sales.</p>
             </div>
         </div>
     </section>
-
+    
     <!-- Call-to-Action -->
     <section class="cta-section">
         <h2>Ready to Grow Your Business?</h2>
